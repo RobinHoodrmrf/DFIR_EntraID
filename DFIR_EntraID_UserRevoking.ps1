@@ -1,7 +1,7 @@
-# Import the AzureAD module
+# Install the AzureAD module in Powershell
 Import-Module AzureAD
 
-# Connect to Azure AD with admin credentials
+# Connect to Azure AD with admin credentials 
 function Connect-AzureADAccount {
     try {
         Connect-AzureAD
@@ -13,7 +13,7 @@ function Connect-AzureADAccount {
     return $true
 }
 
-# Get User ID from User Principal Name (UPN) (decided this was the easiest way to work)
+# Get the User ID from User Principal Name (UPN) (decided this was the easiest way to work)
 function Get-UserIdFromUPN {
     param (
         [Parameter(Mandatory=$true)]
@@ -30,7 +30,7 @@ function Get-UserIdFromUPN {
     }
 }
 
-# Actions to be taken on each user
+# Actions/Commands/Execution to be taken on each user
 function ProcessUserActions {
     param (
         [Parameter(Mandatory=$true)]
@@ -63,7 +63,7 @@ function ProcessUserActions {
     }
 }
 
-# Revoke user sessions
+# Revoke All user sessions
 function Revoke-AzureADUserSessions {
     param (
         [Parameter(Mandatory=$true)]
@@ -96,7 +96,7 @@ function Reset-UserPassword {
     }
 }
 
-# Disable a user account
+# Disable user account
 function Disable-AzureADUser {
     param (
         [Parameter(Mandatory=$true)]
